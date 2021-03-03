@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="uft-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact</title>
+      <link rel=" icon" type="image/png" href="favicon-32x32.png">
+      <link rel="stylesheet" href="css/normalize.css" type="text/csss">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.production.css" type="text/css" >
+    </head>
+<body>
+  <header class="page-header">
+    <!--Hier is my Logo-->
+   <img src="img/Moussa_logo.png" class="page-header__item" alt="Personal logo of Moussa Ghaddar and the name of the new career">
+   <nav class="main-navigation page-header__item">
+     <ul role="menubar" class="navigation-list"><!--this is an unorderd List of lockal links-->
+       <li role="presentation">
+         <a href="index.html" role="menuitem" class="navigation-list__item navigation-list__item">home</a>
+       </li>
+       <li role="presentation">
+         <a href="about.html" role="menuitem" class="navigation-list__item">About me</a>
+       </li>
+       <li role="presentation">
+         <a href="work.html" role="menuitem" class="navigation-list__item">work</a>
+       </li>
+       <li role="presentation">
+         <a href="contact.html" role="menuitem" class="navigation-list__item--active">Contact</a>
+       </li>
+     </ul>
+   </nav>
+</header>
+<main>
+  <!--A contact form: Name, Email, tel, and a messagebox-->
+  <form action="" method="POST" id="contact-form">
+    <label clas="standard-labe" for="contact-name">Full name</label><br>
+    <input type="name" id="contact-name" placeholder="Full name" required><br>
+    <label class="standard-lable" for="contact-email">Email:</label><br>
+    <input type="email" id="contact-email" placeholder="mail@domain.com" required><br>
+    <label class="standard-lable" for="contact-telephone">Telephone: </label><br>
+    <input type="tel" id="contact-telephone" placeholder="3-3-4" pattern="\d{3}[\-]\d{3}[\-]\d{4}"><br>
+    <label class="standard-lable" for="contact-text">Message: </label><br>
+    <textarea maxlength="240" id="contact-text" placeholder="max. 240 Charecters" required></textarea><br>
+    <input type="submit" value="Send message">
+  </form>
+    <div>
+      <h1>Feel free to:</h1>
+      <nav>
+        <!--Contact information-->
+        <a href="mailto:moussa_gh@outlook.de">moussa_gh@outlook.de</a><br>
+        Tel: <a href="tel:+4915253697899">Call me</a><br>
+        skype <a href="skype:Moussa Ghaddar">Moussa Ghaddar</a><br><br>
+        <a href="mailto:moussa_gh@outlook.de"><button type="submit">Contact me</button></a><br>
+      </nav>  
+    </div>
+  <br>
+  <br>
+</main>
+<footer class="page-footer">
+  <p>Find me on</p>
+  <div class="social-media">
+  <!--instagram icon-->
+    <a href="https://www.instagram.com/moussa_ghaddar">
+    <img src="img/instagram_icon.svg" width="30px" height="30px" alt="instagram icon"></a>
+  <!--Linkedin icon-->
+    <a href="http://linkedin.com/in/moussa-ghaddar-721859206">
+    <img src="img/linkedin_icon.svg" width="30px" height="30px" alt="LinkedIn icon"></a>
+  <!--Github icon-->
+    <a href="https://github.com/moses0072">
+    <img src="img/github_icon.svg" width="30px" height="30px" alt="Github icon"></a>
+  </div>
+</footer>
+<script src="js/tota11y.js"></script>
+</body>
+</html>
