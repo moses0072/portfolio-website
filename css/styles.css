@@ -12,7 +12,7 @@ darkgrey: #2b2b2b
     --secondary-color: #e0b354;
     --visited-color: #05676e;
     --active-color: #489c79;
-    --light-gray: #d3d3d3;
+    --light-gray: #f3f3f3;
     --text-family: 'lato', sans-serif;
     --text-color: #fff;
     --animation-color-from: #edc655;
@@ -62,7 +62,7 @@ a:visited {
 /*No underlining when hovering*/
 a:hover, a:focus {
     text-decoration: none;
-    transition: 0,2s opacity;
+    transition: 0.2s opacity;
     font-weight: bold;
 }
 /*Selected links(while clicking on the link)*/
@@ -85,7 +85,7 @@ a:active {
     border-radius: 3px;
     /*gives the button a bottom border with a width of 2 px
     of solid, and a color in RGBA format*/
-    border-bottom: 2px solid rgma(0, 0, 0, 0.3);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
     /* duration and property transitions*/
     transition: 0.2s opacity;
     
@@ -157,6 +157,7 @@ list-style-type: none;
 .about__me {
     list-style-type: none;
     font-weight: bold;
+    padding-left: 0;
 }
 /* Berlin svg into the middle */
 .berlin-illustration {
@@ -170,9 +171,12 @@ list-style-type: none;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 300px 300px;
     grid-gap: 20px;
+    
 }
 .grid__item {
-    background-color: var(--light-gray)
+    background-color: var(--light-gray);
+    border: 3px solid var(--primary-color);
+    
 }
 .grid__item:last-child {
     grid-column: 3  / 3;
@@ -182,8 +186,8 @@ list-style-type: none;
 .page-footer {
     display: flex;
     clear: both;
-    flex-direction: column;
     text-align: center;
+    flex-direction: column;
 }
 
 @media all and (max-width: 500px) {
@@ -239,7 +243,7 @@ list-style-type: none;
     animation-name: cloud-move;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    animation-timing-function: liniar;
+    animation-timing-function: linear;
 }
 /* Cloud back*/
 @keyframes cloud-move-reverse {
