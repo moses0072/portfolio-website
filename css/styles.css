@@ -167,6 +167,7 @@ list-style-type: none;
 /*start grid fallback, used to let old Browsers recognize the grid*/
 .grid__item {
     display: inline-block;
+    background-color: var(--light-gray);
     width: 33%;
 }
 /* end grid fallback*/
