@@ -192,6 +192,8 @@ list-style-type: none;
 .grid__item {
     display: inline-block;
     width: 33%;
+    background-color: #f3f3f3;
+    border: 3px solid #357b70;
 }
 /* end grid fallback*/
 /* adding a grid  to work.html*/
