@@ -33,18 +33,19 @@
 </header>
 <main>
   <!--A contact form: Name, Email, tel, and a messagebox-->
-  <form method="POST" id="contact-form">
-    <label class="standard-lable" for="contact-name">Full name</label><br>
-    <input type="text" id="contact-name"><br>
-    <label class="standard-lable" for="contact-email">Email:</label><br>
-    <input type="email" id="contact-email" placeholder="mail@domain.com" required><br>
-    <label class="standard-lable" for="contact-telephone">Telephone: </label><br>
-    <input type="tel" id="contact-telephone" placeholder="3-3-4" pattern="\d{3}[\-]\d{3}[\-]\d{4}"><br>
-    <label class="standard-lable" for="contact-text">Message: </label><br>
-    <textarea maxlength="240" id="contact-text" placeholder="max. 240 Charecters" required></textarea><br>
-    <input type="submit" value="Send message">
-  </form>
-    <div>
+  <div class="contact-container" >
+    <form method="POST" class="contact-container__item" id="contact-form">
+      <label class="standard-lable" for="contact-name">Full name</label><br>
+      <input type="text" id="contact-name"><br>
+      <label class="standard-lable" for="contact-email">Email:</label><br>
+      <input type="email" id="contact-email" placeholder="mail@domain.com" required><br>
+      <label class="standard-lable" for="contact-telephone">Telephone: </label><br>
+      <input type="tel" id="contact-telephone" placeholder="3-3-4" pattern="\d{3}[\-]\d{3}[\-]\d{4}"><br>
+      <label class="standard-lable" for="contact-text">Message: </label><br>
+      <textarea maxlength="240" id="contact-text" placeholder="max. 240 Charecters" required></textarea><br>
+      <input type="submit" value="Send message">
+    </form>
+    <div class="contact-container__item">
       <h1>Feel free to:</h1>
       <nav>
         <!--Contact information-->
@@ -54,6 +55,7 @@
         <a href="mailto:moussa_gh@outlook.de" class="button">Contact me</a><br>
       </nav>  
     </div>
+  </div>
   <br>
   <br>
 </main>
