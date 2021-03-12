@@ -212,7 +212,7 @@ list-style-type: none;
     border: 3px solid #357b70;
     width: auto;
     min-height: auto;
-    
+    padding: 10px;
     
 }
 .grid__item:last-child {
