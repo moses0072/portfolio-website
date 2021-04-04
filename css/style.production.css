@@ -26,6 +26,17 @@ body {
     /*set the line-height to 1.6*/
     line-height: 1.6;
 }
+
+label {
+    display: inline-block;
+    min-width: 75px;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.8em;
+  }
+  
 /*all h1, h2, and h3 on the page will have the 
 charastaristics below */
 h1 {
