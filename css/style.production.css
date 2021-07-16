@@ -5,97 +5,58 @@
 * Browsers: last 4 version
 */
 
-/*
-colors used
+:root {
+  --primary-color: #357b70;
+  --secondary-color: #e0b354;
+  --visited-color: #05676e;
+  --active-color: #489c79;
+  --light-gray: #f3f3f3;
+  --text-family: "lato", sans-serif;
+  --text-color: #fff;
+  --animation-color-from: #edc655;
+  --animation-color-mid: #fcffad;
+  --animation-color-to: #f76414;
+  --body-font-size: 16px;
+  --body-font-weight: 400;
+  --h1-font-size: 30px;
+  --h1-font-weight: bold;
+}
 
-color   : #357b70
-        : #489c79
-        : #05676e
-        : #e0b354
-darkgrey: #2b2b2b
-*/
+/* Global Styles */
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 body {
-  font-family: "lato", sans-serif;
+  font-size: 14px;
   font-weight: 400;
-  /*set the font size to 16px*/
-  font-size: 16px;
-  /*set the line-height to 1.6*/
-  line-height: 1.6;
+  font-family: "Poppins", sans-serif;
+  color: #333;
 }
-/*all h1, h2, and h3 on the page will have the 
-charastaristics below */
-h1 {
-  font-size: 30px;
-  font-weight: bold;
+p {
+  color: #565656;
+  line-height: 1.8;
 }
 
-h2 {
-  font-size: 24px;
-  font-weight: 700;
-}
-/*
-h3 {
-    font-size: 18px;
-    font-weight: 700;
-}*/
-.white {
-  color: #fff;
+.keyboard {
+  border-radius: 10% 10% 10% 10%;
 }
 
-.work {
-  width: 400px;
-  max-width: 100%;
-  height: 400px;
-  margin-right: 40px;
-}
-/* All Links will have this color*/
-a {
-  color: #357b70;
-}
-/*visited links*/
-a:visited {
-  color: #05676e;
-}
-/*No underlining when hovering*/
-a:hover,
-a:focus {
-  text-decoration: none;
-  -webkit-transition: 0.2s opacity;
-  -o-transition: 0.2s opacity;
-  transition: 0.2s opacity;
-  font-weight: bold;
-}
-/*Selected links(while clicking on the link)*/
-a:active {
-  color: #489c79;
-}
-
-.button {
-  /* overwrites browser defoults and reset the border */
-  border: none;
-  display: inline-block;
-  /*Take the font from the outer container(In this case its the body)*/
-  font-family: inherit;
-  /* Styles the background color, font color and text decoration of the botun*/
-  background-color: #357b70;
-  color: #fff;
-  text-decoration: none;
-  /* adds spacing to the button*/
+.page-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 10px;
-  border-radius: 3px;
-  /*gives the button a bottom border with a width of 2 px
-    of solid, and a color in RGBA format*/
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  /* duration and property transitions*/
-  -webkit-transition: 0.2s opacity;
-  -o-transition: 0.2s opacity;
-  transition: 0.2s opacity;
+  margin: 10px;
+  width: 100%;
+}
+.page-header__item {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 200px;
+  flex: 0 1 200px;
 }
 
+.button,
 button {
   /* overwrites browser defoults and reset the border */
   border: none;
@@ -103,14 +64,14 @@ button {
   /*Take the font from the outer container(In this case its the body)*/
   font-family: inherit;
   /* Styles the background color, font color and text decoration of the botun*/
-  background-color: #357b70;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--text-color);
   text-decoration: none;
   /* adds spacing to the button*/
   padding: 10px;
   border-radius: 3px;
   /*gives the button a bottom border with a width of 2 px
-    of solid, and a color in RGBA format*/
+  of solid, and a color in RGBA format*/
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   /* duration and property transitions*/
   -webkit-transition: 0.2s opacity;
@@ -129,46 +90,9 @@ button:focus,
   opacity: 0.8;
   /*make the font bigger when hover the Button*/
 }
-.navigation-list li {
-  display: inline-block;
-  margin-left: 15px;
-}
 
-.navigation-list__item {
-  list-style-type: none;
-}
-
-.navigation-list__item--active {
-  text-decoration: none;
-}
-
-.article__paragraph {
-  text-align: justify;
-  padding: 10px;
-}
-/* Creating a Flexbox for the header*/
-.page-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 10px;
-  margin: 10px;
-  width: 100%;
-}
-.page-header__item {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 1 200px;
-  flex: 0 1 200px;
-}
-.page-header__item:last-child {
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  text-align: right;
-}
-/* Profile image and welcome Text */
 .profile {
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto; /*auto spacing to left and right*/
 }
 .profile__portrait {
@@ -179,69 +103,216 @@ button:focus,
   margin-right: 40px;
   border-radius: 50%;
 }
-/* header, paragraph, ul and a into the center*/
-.about {
+
+.section {
+  min-height: 800px;
+}
+/*.container {
+  width: 1170px;
+  max-width: 90%;
+  margin: 0 auto;
+}*/
+.text-center {
   text-align: center;
-  margin: auto;
 }
-/*remove the dots from ul tag*/
-.about__me {
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.content-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  display: table;
+  min-height: 800px;
+}
+.content {
+  display: table-cell;
+  width: 100%;
+  vertical-align: middle;
+}
+/* End Global Styles */
+
+/* Start Nav Styles */
+.navbar {
+  position: fixed;
+  z-index: 999;
+  top: 50%;
+  right: 50px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.navbar .nav-menu {
+  margin: 0;
+  padding: 0;
   list-style-type: none;
-  font-weight: bold;
-  padding-left: 0;
 }
-/* Berlin svg into the middle */
-.berlin-illustration {
+.navbar .nav-menu li {
+  position: relative;
+  min-width: 200px;
+  text-align: right;
+}
+.navbar .nav-menu li .dot {
   display: block;
-  margin: auto;
+  color: #fff;
+  padding: 5px 0;
 }
-/*start grid fallback, used to let old Browsers recognize the grid*/
-.grid__item {
+.navbar .nav-menu li .dot::before,
+.navbar .nav-menu li .dot::after {
+  display: block;
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  top: 50%;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.navbar .nav-menu li .dot::before {
+  width: 5px;
+  height: 5px;
+  right: 0;
+  border: 2px solid #181818;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.navbar .nav-menu li .dot::after {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #357b70;
+  right: -5px;
+  -webkit-transform: translateY(-50%) scale(0);
+  -ms-transform: translateY(-50%) scale(0);
+  transform: translateY(-50%) scale(0);
+}
+.navbar .nav-menu li .dot.active::before,
+.navbar .nav-menu li:hover .dot::before {
+  background: #357b70;
+  border-color: #357b70;
+}
+.navbar .nav-menu li .dot.active::after,
+.navbar .nav-menu li:hover .dot::after {
+  -webkit-transform: translateY(-50%) scale(1);
+  -ms-transform: translateY(-50%) scale(1);
+  transform: translateY(-50%) scale(1);
+}
+.navbar .nav-menu li .dot span {
   display: inline-block;
-  width: 33%;
-  background-color: #f3f3f3;
-  border: 3px solid #357b70;
+  opacity: 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  background-color: #357b70;
+  padding: 10px 20px;
+  border-radius: 3px;
+  margin-right: 30px;
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
-/* end grid fallback*/
-/* adding a grid  to work.html*/
-@supports (display: grid) {
-  .grid {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    /*grid-template-rows: 300px 300px;*/
-    grid-gap: 20px;
-  }
-  .grid__item {
-    background-color: #f3f3f3;
-    border: 3px solid #357b70;
-    width: auto;
-    min-height: auto;
-  }
-  .grid__item:last-child {
-    -ms-grid-column: 3;
-    grid-column: 3 / 3;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 2;
-    grid-row: 1 / 3;
-  }
+.navbar .nav-menu li .dot span::before {
+  display: block;
+  position: absolute;
+  content: "";
+  border-left: 7px solid #357b70;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  top: 50%;
+  -webkit-transform: translate(7px, -50%);
+  -ms-transform: translate(7px, -50%);
+  transform: translate(7px, -50%);
+  right: 0;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.navbar .nav-menu li .dot.active span,
+.navbar .nav-menu li:hover .dot span {
+  -webkit-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+  opacity: 1;
+}
+/* End Nav Styles */
+
+/* Start Home Styles */
+#home {
+  background-color: #f6f6f6;
+}
+#home button {
+  border: 2px solid #ffc107;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 25px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+#home button:hover {
+  background-color: #ffc107;
+  color: #fff;
+}
+/* End Home Styles */
+
+/* Start About Styles */
+#about .container {
+  padding: 100px 0;
+}
+#about p {
+  width: 60%;
+  margin: 10px auto;
+}
+#about img {
+  margin-top: 40px;
+}
+/* End About Styles */
+
+/* Start Services Styles */
+#services {
+  background-color: #eee;
+}
+#services .services {
+  margin: 40px auto;
+}
+#services .services .service {
+  width: 50%;
+  padding: 1%;
 }
 
-.contact-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+.work {
+  width: 400px;
+  max-width: 100%;
+  height: 400px;
+  margin-right: 40px;
 }
+
+#services .text-right {
+  float: right;
+}
+#services .text-left {
+  float: left;
+}
+/* End Services Styles */
+
+/* Start Contact Styles */
+
 .contact-container__item {
   margin: auto;
+  text-align: center;
 }
+/* End Contact Styles */
 
-/*styling the footer and set it in the middle of the page*/
+/* Start Footer Styles */
 .page-footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -253,6 +324,23 @@ button:focus,
   -ms-flex-direction: column;
   flex-direction: column;
 }
+/* End Footer Styles */
+
+.about {
+  text-align: center;
+  margin: auto;
+}
+/*remove the dots from ul tag*/
+.about__me {
+  list-style-type: none;
+  font-weight: bold;
+  padding-left: 0;
+}
+
+.berlin-illustration {
+  display: block;
+  margin: auto;
+}
 
 @media all and (max-width: 500px) {
   .grid {
@@ -262,7 +350,7 @@ button:focus,
 }
 @media all and (min-width: 500px) and (max-width: 750px) {
   .grid {
-    -ms-grid-columns: 1fr 20px 1fr;
+    -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -282,24 +370,24 @@ button:focus,
 /*  SUN ANIMATION*/
 @-webkit-keyframes color-change {
   0% {
-    fill: #edc655;
+    fill: var(--animation-color-from);
   }
   50% {
-    fill: #fcffad;
+    fill: var(--animation-color-mid);
   }
   100% {
-    fill: #f76414;
+    fill: var(--animation-color-to);
   }
 }
 @keyframes color-change {
   0% {
-    fill: #edc655;
+    fill: var(--animation-color-from);
   }
   50% {
-    fill: #fcffad;
+    fill: var(--animation-color-mid);
   }
   100% {
-    fill: #f76414;
+    fill: var(--animation-color-to);
   }
 }
 .sun {
@@ -365,3 +453,9 @@ button:focus,
   -webkit-animation: 34s cloud-move-reverse infinite alternate linear;
   animation: 34s cloud-move-reverse infinite alternate linear;
 }
+/**
+*
+*  I used Normalize.css to reset elements.
+*  I used Autoprifixer to make sure that I'm using the necessary vendor prefixes.
+*
+**/

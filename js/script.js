@@ -1,59 +1,35 @@
-(function() {
-    let form = document.querySelector('#contact-form');
-    let emailInput = document.querySelector('#contact-email');
-    function validateEmail() {
-        let value = emailInput.value;
-        
-        if (!value) {
-          showErrorMessage(emailInput, 'E-mail is a required field.');
-          return false;
-        }
-        
-        if (value.indexOf('@') === -1) {
-          showErrorMessage(emailInput, 'You must enter a valid e-mail address.');
-          return false;
-        }
-    
-        if (value.indexOf('.') === -1) {
-          showErrorMessage(emailInput, 'You must enter a valid e-mail address.');
-          return false;
-        }
-        
-        showErrorMessage(emailInput, null);
-        return true;
+$(function() {
+  
+  var link = $('#navbar a.dot');
+  
+  // Move to specific section when click on menu link
+  link.on('click', function(e) {
+    var target = $($(this).attr('href'));
+    $('html, body').animate({
+      scrollTop: target.offset().top
+    }, 600);
+    $(this).addClass('active');
+    e.preventDefault();
+  });
+  
+  // Run the scrNav when scroll
+  $(window).on('scroll', function(){
+    scrNav();
+  });
+  
+  // scrNav function 
+  // Change active dot according to the active section in the window
+  function scrNav() {
+    var sTop = $(window).scrollTop();
+    $('section').each(function() {
+      var id = $(this).attr('id'),
+          offset = $(this).offset().top-1,
+          height = $(this).height();
+      if(sTop >= offset && sTop < offset + height) {
+        link.removeClass('active');
+        $('#navbar').find('[data-scroll="' + id + '"]').addClass('active');
       }
-
-      function showErrorMessage(input, message) {
-        let container = input.parentElement; // The .input-wrapper
-        
-        // Remove an existing error
-        let error = container.querySelector('.error-message');
-        if (error) {
-          container.removeChild(error);
-        }
-        
-        // Now add the error, if the message is not empty
-        if (message) {
-          let error = document.createElement('div');
-          error.classList.add('error-message');
-          error.innerText = message;
-          container.appendChild(error);
-        }
-      }
-
-    function validateForm() {
-        let isValidEmail = validateEmail();
-        return isValidEmail;
-    }
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault(); //don't submit to the server
-        if (validateForm()) {
-            alert('Success!');
-        }
     });
-
-    //Event Listener to updade the validation in real time
-    emailInput.addEventListener('input', validateEmail);
-
-})();
+  }
+  scrNav();
+});
